@@ -35,10 +35,10 @@ highchart <- function(hc_opts = list(),
     hc_opts <- opts$chart
   }
 
-  unfonts <- NULL
-  if (google_fonts) {
-    unfonts <- unique(c(.hc_get_fonts(hc_opts), .hc_get_fonts(theme)))
-  }
+  # unfonts <- NULL
+  # if (google_fonts) {
+  #   unfonts <- unique(c(.hc_get_fonts(hc_opts), .hc_get_fonts(theme)))
+  # }
 
   opts$chart <- NULL
 
@@ -48,7 +48,8 @@ highchart <- function(hc_opts = list(),
     theme = theme,
     conf_opts = opts,
     type = type,
-    fonts = unfonts,
+    fonts = unique(c(.hc_get_fonts(hc_opts), .hc_get_fonts(theme))),
+    google_fonts = google_fonts,
     debug = getOption("highcharter.debug")
   )
 

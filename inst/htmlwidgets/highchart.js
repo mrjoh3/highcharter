@@ -23,7 +23,7 @@ HTMLWidgets.widget({
       console.log("conf_opts", x.conf_opts);
     }
 
-    if(x.fonts !== undefined) {
+    if(x.fonts !== undefined & x.google_fonts) {
       
       x.fonts = ((typeof(x.fonts) == "string") ? [x.fonts] : x.fonts);
     
